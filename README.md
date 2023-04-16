@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+*se crea el BACKEND*
+-se instalo "npm i json-server"
+-se instalo "npm i axios"
+-se instalo "npm i react-router-dom"
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- hice todos los Hooks con la lógica a utilizar
+- se importan los datos necesarios de cada Hooks en el useContext (proveedor)
 
-## Available Scripts
+***
+-empiezo a crear las Rutas y el "MainLayoutRoutes"
+-se crea el Navbar
+-Empiezo a crear las vistas de las paginas
 
-In the project directory, you can run:
+***
+-crear los componentes a utilizar (ej: Card)(Clase 15 15:00)
+-hacer el array.map() de products
+-crear funcion para ocultar icono de favorito (Clase 15 30:00)
+	La funcion debe buscar en el array si el ID existe usando .some y da un boolean
+	Esta funcion va dentro del Hook favorito y se va pasando desde el proveedor de useContext
 
-### `npm start`
+-Se hace el onClick para AGREGAR objetos al array de "favoritos" (Clase 15 45:00)
+	Se debe usar una peticion POST con una funcion async; va en Hook favorito
+	Esa función se pasa por params al onClick en el boton de agregar a favorito.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+-Se hace el onClick para REMOVER objetos del array de "favoritos" (Clase 15 56:00)
+	Se debe usar una peticion DELETE con una funcion async que tome el valor del id a borrar; va en Hook favorito
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+***
+-Se hace la Pages Favoritos donde se debe mostrar todos los añadidos en favoritos: (CLASE 15 1:02:00)
+	En esta page se hace un .map en el array "favorites" que traigo de useContext (provider)
 
-### `npm test`
+-Tengo que cambiar los iconos del corazón al tachito para los objetes que se muestran en page "Favoritos".
+	-Pasando una props booleana en "Favorites.jsx", se debe hacer un ternario en "Card.jsx" dependiendo si es true o false, mostrar el ico que corresponde.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+*** 
+- hay que hacer un formulario para luego cargar nuevos productos (CLASE 15 1:20:00)
+	Hacerlo dinámico utilizando shared. 
+	Poner la lógica en un custom Hook: debe guardar el valor de los input con un handleChange. La logica del boton "submit" no se pone
+acá por si el form se llega a reutilizar para otra cosa.
 
-### `npm run build`
+- Poner el <Formulario/> en la pages a mostar.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Se crea la carpeta "helper" dentro de SRC(CLASE 15 1:48:00)
+	Acá creo una funcion (agregar EXPORT) para poner un Switch donde dependiendo el string, ponga un tipo de dato en el Input.
+	Esta funcion se agrega al <Input/> como "type=" dentro del archivo Formulario.jsx
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- se crea la función de agregar producto dentro del Hook useProduct
+	debe tomar un objeto y hacer un axiosClient.POST a la dirección de productos y se le agrega el nuevo objeto
+	Esta se importa dentro del Formulario.jsx

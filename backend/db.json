@@ -1,0 +1,62 @@
+{
+  "productos": [
+    {
+      "nombre": "zapatilla",
+      "id": 1,
+      "marca": "Nike",
+      "modelo": "air jordan retro 4 ",
+      "precio": "11000"
+    },
+    {
+      "nombre": "zapatilla",
+      "marca": "Adidas",
+      "modelo": "Bad Bunny",
+      "precio": "25000",
+      "id": 2
+    },
+    {
+      "nombre": "Campera",
+      "marca": "Puma",
+      "modelo": "ferrari",
+      "precio": "15000",
+      "id": 3
+    },
+    {
+      "nombre": "MOCHILA",
+      "id": 4,
+      "marca": "Fil",
+      "modelo": "bolsito",
+      "precio": "50"
+    },
+    {
+      "nombre": "BICICLETA",
+      "id": 5,
+      "marca": "Top Mega",
+      "modelo": "Agile",
+      "precio": "50000"
+    },
+    {
+      "nombre": "Marcelo",
+      "marca": "Top Mega",
+      "modelo": "Agile",
+      "precio": "15000",
+      "id": 6
+    },
+    {
+      "nombre": "Monopatin",
+      "id": 7,
+      "marca": "Philco",
+      "modelo": "60s",
+      "precio": "12000"
+    }
+  ],
+  "favoritos": [
+    {
+      "nombre": "zapatilla",
+      "modelo": "Bad Bunny",
+      "precio": "25000",
+      "marca": "Adidas",
+      "id": 2
+    }
+  ]
+}
