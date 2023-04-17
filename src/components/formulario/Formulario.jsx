@@ -19,8 +19,6 @@ const Formulario = (props) => {
             saveProduct(form) //si edit es false (osea, no esta en el formulario de editar) entonces... ejecuta la funcion guardar
             alert("producto agregado")
         }
-        
-
     }
 
     return (
